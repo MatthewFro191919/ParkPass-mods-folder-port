@@ -7,25 +7,6 @@ end
 function onCreatePost()
     precacheImage('lyric/spritemap1')
     addCharacterToList("i'll",'dad')
-    
-    runHaxeCode([[
-	
-    for (no in game.unspawnNotes)
-    {
-        if(!no.mustPress)
-        no.cameras = [game.camGame];
-        no.scrollFactor.set(1, 1);
-    }
-
-    // opponent and player strums
-    for (n in game.opponentStrums)
-    {
-        n.cameras = [game.camGame];
-        n.scrollFactor.set(1, 1);
-    }
-   
-]])
-callMethod('noteGroup.remove', {instanceArg('notes')})
 end
 function onSpawnNote()
     if not getProperty('notes.members[0].mustPress') then
